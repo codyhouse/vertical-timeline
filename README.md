@@ -16,6 +16,7 @@ Call a `TimeLine.enable(options);` when DOM is fully loaded to activate animated
 ## Options
 
 Available options:
+
 | Name          | type   | default            | description                            |
 | ------------- | ------ | ------------------ | -------------------------------------- |
 | timelineBlock | string | .cd-timeline-block | Class name of timeline-block           |
