@@ -1,0 +1,5 @@
+.idea
+/bourbon/*
+/.sass-cache/*
+*.DS_Store
+/nbproject/
