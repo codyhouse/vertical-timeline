@@ -3,7 +3,6 @@
 Primary style
 
 -------------------------------- */
-/* line 15, ../scss/style.scss */
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -15,14 +14,12 @@ Primary style
 Modules - reusable parts of our design
 
 -------------------------------- */
-/* line 25, ../scss/style.scss */
 .cd-container {
   /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
   width: 90%;
   max-width: 1170px;
   margin: 0 auto;
 }
-/* line 30, ../scss/style.scss */
 .cd-container::after {
   /* clearfix */
   content: '';
@@ -35,14 +32,12 @@ Modules - reusable parts of our design
 Main components
 
 -------------------------------- */
-/* line 43, ../scss/style.scss */
 #cd-timeline {
   position: relative;
   padding: 2em 0;
   margin-top: 2em;
   margin-bottom: 2em;
 }
-/* line 51, ../scss/style.scss */
 #cd-timeline::before {
   /* this is the vertical line */
   content: '';
@@ -54,53 +49,43 @@ Main components
   background: #d7e4ed;
 }
 @media only screen and (min-width: 1170px) {
-  /* line 43, ../scss/style.scss */
   #cd-timeline {
     margin-top: 3em;
     margin-bottom: 3em;
   }
-  /* line 68, ../scss/style.scss */
   #cd-timeline::before {
     left: 50%;
     margin-left: -2px;
   }
 }
 
-/* line 75, ../scss/style.scss */
 .cd-timeline-block {
   position: relative;
   margin: 2em 0;
 }
-/* line 15, ../bourbon/addons/_clearfix.scss */
 .cd-timeline-block:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 80, ../scss/style.scss */
 .cd-timeline-block:first-child {
   margin-top: 0;
 }
-/* line 84, ../scss/style.scss */
 .cd-timeline-block:last-child {
   margin-bottom: 0;
 }
 @media only screen and (min-width: 1170px) {
-  /* line 75, ../scss/style.scss */
   .cd-timeline-block {
     margin: 4em 0;
   }
-  /* line 91, ../scss/style.scss */
   .cd-timeline-block:first-child {
     margin-top: 0;
   }
-  /* line 95, ../scss/style.scss */
   .cd-timeline-block:last-child {
     margin-bottom: 0;
   }
 }
 
-/* line 101, ../scss/style.scss */
 .cd-timeline-img {
   position: absolute;
   top: 0;
@@ -111,7 +96,6 @@ Main components
   box-shadow: 0 0 0 4px #ffffff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
   background: #a3c0d5;
 }
-/* line 111, ../scss/style.scss */
 .cd-timeline-img img {
   display: block;
   width: 24px;
@@ -123,7 +107,6 @@ Main components
   margin-top: -12px;
 }
 @media only screen and (min-width: 1170px) {
-  /* line 101, ../scss/style.scss */
   .cd-timeline-img {
     width: 60px;
     height: 60px;
@@ -133,11 +116,9 @@ Main components
     -webkit-transform: translateZ(0);
     -webkit-backface-visibility: hidden;
   }
-  /* line 132, ../scss/style.scss */
   .cssanimations .cd-timeline-img.is-hidden {
     visibility: hidden;
   }
-  /* line 136, ../scss/style.scss */
   .cssanimations .cd-timeline-img.bounce-in {
     visibility: visible;
     -webkit-animation: cd-bounce-1 0.6s;
@@ -197,7 +178,6 @@ Main components
     transform: scale(1);
   }
 }
-/* line 159, ../scss/style.scss */
 .cd-timeline-content {
   position: relative;
   margin-left: 60px;
@@ -206,31 +186,25 @@ Main components
   padding: 1em;
   box-shadow: 0 3px 0 #d7e4ed;
 }
-/* line 15, ../bourbon/addons/_clearfix.scss */
 .cd-timeline-content:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 168, ../scss/style.scss */
 .cd-timeline-content h2 {
   color: #303e49;
 }
-/* line 172, ../scss/style.scss */
 .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
   font-size: 13px;
   font-size: 0.8125rem;
 }
-/* line 176, ../scss/style.scss */
 .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
   display: inline-block;
 }
-/* line 180, ../scss/style.scss */
 .cd-timeline-content p {
   margin: 1em 0;
   line-height: 1.6;
 }
-/* line 185, ../scss/style.scss */
 .cd-timeline-content .cd-read-more {
   float: right;
   padding: .8em 1em;
@@ -238,17 +212,14 @@ Main components
   color: #ffffff;
   border-radius: 0.25em;
 }
-/* line 192, ../scss/style.scss */
 .no-touch .cd-timeline-content .cd-read-more:hover {
   background-color: #bac4cb;
 }
-/* line 197, ../scss/style.scss */
 .cd-timeline-content .cd-date {
   float: left;
   padding: .8em 0;
   opacity: .7;
 }
-/* line 203, ../scss/style.scss */
 .cd-timeline-content::before {
   content: '';
   position: absolute;
@@ -260,41 +231,34 @@ Main components
   border-right: 7px solid #ffffff;
 }
 @media only screen and (min-width: 768px) {
-  /* line 215, ../scss/style.scss */
   .cd-timeline-content h2 {
     font-size: 20px;
     font-size: 1.25rem;
   }
-  /* line 219, ../scss/style.scss */
   .cd-timeline-content p {
     font-size: 16px;
     font-size: 1rem;
   }
-  /* line 223, ../scss/style.scss */
   .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
     font-size: 14px;
     font-size: 0.875rem;
   }
 }
 @media only screen and (min-width: 1170px) {
-  /* line 159, ../scss/style.scss */
   .cd-timeline-content {
     margin-left: 0;
     padding: 1.6em;
     width: 45%;
   }
-  /* line 233, ../scss/style.scss */
   .cd-timeline-content::before {
     top: 24px;
     left: 100%;
     border-color: transparent;
     border-left-color: #ffffff;
   }
-  /* line 240, ../scss/style.scss */
   .cd-timeline-content .cd-read-more {
     float: left;
   }
-  /* line 244, ../scss/style.scss */
   .cd-timeline-content .cd-date {
     position: absolute;
     width: 100%;
@@ -303,11 +267,9 @@ Main components
     font-size: 16px;
     font-size: 1rem;
   }
-  /* line 252, ../scss/style.scss */
   .cd-timeline-block:nth-child(even) .cd-timeline-content {
     float: right;
   }
-  /* line 255, ../scss/style.scss */
   .cd-timeline-block:nth-child(even) .cd-timeline-content::before {
     top: 24px;
     left: auto;
@@ -315,21 +277,17 @@ Main components
     border-color: transparent;
     border-right-color: #ffffff;
   }
-  /* line 263, ../scss/style.scss */
   .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
     float: right;
   }
-  /* line 267, ../scss/style.scss */
   .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-date {
     left: auto;
     right: 122%;
     text-align: right;
   }
-  /* line 274, ../scss/style.scss */
   .cssanimations .cd-timeline-content.is-hidden {
     visibility: hidden;
   }
-  /* line 278, ../scss/style.scss */
   .cssanimations .cd-timeline-content.bounce-in {
     visibility: visible;
     -webkit-animation: cd-bounce-2 0.6s;
@@ -340,7 +298,6 @@ Main components
 
 @media only screen and (min-width: 1170px) {
   /* inverse bounce effect on even content blocks */
-  /* line 287, ../scss/style.scss */
   .cssanimations .cd-timeline-block:nth-child(even) .cd-timeline-content.bounce-in {
     -webkit-animation: cd-bounce-2-inverse 0.6s;
     -moz-animation: cd-bounce-2-inverse 0.6s;

@@ -3,13 +3,11 @@
 Primary style
 
 -------------------------------- */
-/* line 15, ../scss/demo.scss */
 html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 20, ../scss/demo.scss */
 body {
   font-size: 100%;
   font-family: "Droid Serif", serif;
@@ -17,19 +15,16 @@ body {
   background-color: #e9f0f5;
 }
 
-/* line 29, ../scss/demo.scss */
 a {
   color: #acb7c0;
   text-decoration: none;
   font-family: "Open Sans", sans-serif;
 }
 
-/* line 35, ../scss/demo.scss */
 img {
   max-width: 100%;
 }
 
-/* line 39, ../scss/demo.scss */
 h1, h2 {
   font-family: "Open Sans", sans-serif;
   font-weight: bold;
@@ -40,46 +35,38 @@ h1, h2 {
 Main components
 
 -------------------------------- */
-/* line 50, ../scss/demo.scss */
 header {
   height: 200px;
   line-height: 200px;
   text-align: center;
   background: #303e49;
 }
-/* line 56, ../scss/demo.scss */
 header h1 {
   color: #ffffff;
   font-size: 18px;
   font-size: 1.125rem;
 }
 @media only screen and (min-width: 1170px) {
-  /* line 50, ../scss/demo.scss */
   header {
     height: 300px;
     line-height: 300px;
   }
-  /* line 65, ../scss/demo.scss */
   header h1 {
     font-size: 24px;
     font-size: 1.5rem;
   }
 }
 
-/* line 72, ../scss/demo.scss */
 .cd-timeline-img.cd-picture {
   background: #75ce66;
 }
-/* line 76, ../scss/demo.scss */
 .cd-timeline-img.cd-movie {
   background: #c03b44;
 }
-/* line 80, ../scss/demo.scss */
 .cd-timeline-img.cd-location {
   background: #f0ca45;
 }
 
-/* line 85, ../scss/demo.scss */
 .cd-timeline-content {
   background: #ffffff;
 }
