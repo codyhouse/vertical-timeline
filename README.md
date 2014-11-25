@@ -3,7 +3,7 @@ Vertical Timeline
 
 An easy to customize, responsive timeline.
 
-[Article on Cody](http://codyhouse.co/gem/vertical-timeline/)
+[Article on CodyHouse](http://codyhouse.co/gem/vertical-timeline/)
 
 [Demo](http://codyhouse.co/demo/vertical-timeline/index.html)
  
