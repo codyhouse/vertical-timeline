@@ -12,40 +12,11 @@ Primary style
 
 -------------------------------- */
 
-html * {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
 *, *:after, *:before {
 	@include box-sizing(border-box);
 }
 
-body {
-	font: {
-		size: 100%;
-		family: $primary-font; // variables inside partials > _variables.scss
-	}
-	color: $main-text;
-	background-color: $background;
-}
-
-a {
-	color: $link;
-	text-decoration: none;
-	font-family: $secondary-font;
-}
-
-img {
-	max-width: 100%;
-}
-
-h1, h2 {
-	font-family: $secondary-font;
-	font-weight: bold;
-}
-
-/* -------------------------------- 
+/* --------------------------------
 
 Modules - reusable parts of our design
 
@@ -63,32 +34,11 @@ Modules - reusable parts of our design
 	}
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
-Main components 
+Main components
 
 -------------------------------- */
-
-header {
-	height: 200px;
-	line-height: 200px;
-	text-align: center;
-	background: $color-1;
-
-	h1 {
-		color: $color-3;
-		@include font-size(18px);
-	}
-
-	@include MQ(L) {
-		height: 300px;
-		line-height: 300px;
-
-		h1 {
-			@include font-size(24px);
-		}
-	}
-}
 
 #cd-timeline {
 	position: relative;
@@ -155,7 +105,8 @@ header {
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
-	box-shadow: 0 0 0 4px $color-3, inset 0 2px 0 rgba(#000, .08), 0 3px 0 4px rgba(#000, .05) ;
+	box-shadow: 0 0 0 4px $color-3, inset 0 2px 0 rgba(#000, .08), 0 3px 0 4px rgba(#000, .05);
+    background: darken($background, 20%);
 
 	img {
 		display: block;
@@ -166,18 +117,6 @@ header {
 		top: 50%;
 		margin-left: -12px;
 		margin-top: -12px;
-	}
-
-	&.cd-picture {
-		background: $color-4;
-	}
-
-	&.cd-movie {
-		background: $color-2;
-	}
-
-	&.cd-location {
-		background: $color-5;
 	}
 
 	@include MQ(L) {
@@ -220,7 +159,7 @@ header {
 .cd-timeline-content {
 	position: relative;
 	margin-left: 60px;
-	background: $color-3;
+	background: lighten($background, 5%);
 	@include border-radius;
 	padding: 1em;
 	box-shadow: 0 3px 0 darken($background, 5%);

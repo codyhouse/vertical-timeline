@@ -1,0 +1,87 @@
+@import 'bourbon'; // http://bourbon.io/
+
+@import '../partials/variables'; // colors, fonts etc...
+
+@import '../partials/mixins'; // custom mixins
+
+@import '../partials/layout'; // responsive grid and media queries
+
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+
+html * {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	font: {
+		size: 100%;
+		family: $primary-font; // variables inside partials > _variables.scss
+	}
+	color: $main-text;
+	background-color: $background;
+}
+
+a {
+	color: $link;
+	text-decoration: none;
+	font-family: $secondary-font;
+}
+
+img {
+	max-width: 100%;
+}
+
+h1, h2 {
+	font-family: $secondary-font;
+	font-weight: bold;
+}
+
+/* --------------------------------
+
+Main components
+
+-------------------------------- */
+
+header {
+	height: 200px;
+	line-height: 200px;
+	text-align: center;
+	background: $color-1;
+
+	h1 {
+		color: $color-3;
+		@include font-size(18px);
+	}
+
+	@include MQ(L) {
+		height: 300px;
+		line-height: 300px;
+
+		h1 {
+			@include font-size(24px);
+		}
+	}
+}
+
+.cd-timeline-img {
+  &.cd-picture {
+    background: $color-4;
+  }
+
+  &.cd-movie {
+    background: $color-2;
+  }
+
+  &.cd-location {
+    background: $color-5;
+  }
+}
+
+.cd-timeline-content {
+  background: $color-3;
+}
