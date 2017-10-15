@@ -543,7 +543,8 @@ Splited timeline
 }
 
 .inner-split > .cd-timeline-container:first-child::before {
-  height: 3% !important;
+  /*height: 3.55% !important;*/
+  height: 35px !important;
 }
 
 .total-split-3 > .cd-timeline-container:nth-child(odd) {
@@ -559,7 +560,7 @@ Splited timeline
 /*}*/
 
 .total-split-3::before {
-  right: 33.5% !important;
+  right: 33.35% !important;
 }
 .split::before {
   content: '';
