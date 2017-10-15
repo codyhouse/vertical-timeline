@@ -44,7 +44,7 @@ Modules - reusable parts of our design
 .cd-container {
   /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
   width: 90%;
-  max-width: 1170px;
+  /*max-width: 1170px;*/ /* remove content width */
   margin: 0 auto;
 }
 .cd-container::after {
