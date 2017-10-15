@@ -81,13 +81,13 @@ header h1 {
   }
 }
 
-#cd-timeline {
+.cd-timeline-container {
   position: relative;
   padding: 2em 0;
   margin-top: 2em;
   margin-bottom: 2em;
 }
-#cd-timeline::before {
+.cd-timeline-container::before {
   /* this is the vertical line */
   content: '';
   position: absolute;
@@ -96,13 +96,14 @@ header h1 {
   height: 100%;
   width: 4px;
   background: #d7e4ed;
+  z-index: -1;
 }
 @media only screen and (min-width: 1170px) {
-  #cd-timeline {
+  .cd-timeline-container {
     margin-top: 3em;
     margin-bottom: 3em;
   }
-  #cd-timeline::before {
+  .cd-timeline-container::before {
     left: 50%;
     margin-left: -2px;
   }
@@ -479,5 +480,94 @@ header h1 {
     -ms-transform: translateX(0);
     -o-transform: translateX(0);
     transform: translateX(0);
+  }
+}
+
+/* --------------------------------
+
+Splited timeline
+
+-------------------------------- */
+
+.split {
+  background: #e9f0f5;
+  z-index: 1;
+  border-bottom: 35px solid #e9f0f5;
+  margin-bottom: -35px;
+}
+
+.split .cd-timeline-container {
+  width: 50%;
+  display: inline-block;
+}
+
+.split .cd-timeline-block:nth-child(even) .cd-date {
+  right: 150%;
+}
+
+.split .cd-timeline-container:nth-child(even) {
+  float: left;
+}
+
+.split .cd-date {
+  left: 145%;
+}
+
+.split .cd-timeline-block {
+  z-index: 2;
+}
+
+.split .cd-timeline-content {
+  width: 39%;
+  margin-left: 1em;
+}
+
+.split .cd-timeline-container::before {
+  z-index: 2;
+}
+.split .cd-timeline-container {
+  margin-top: 0em;
+}
+
+.split::before {
+  content: '';
+  position: absolute;
+  height: 4px;
+  right: 25%;
+  width: 50%;
+  background: #d7e4ed;
+}
+
+.split::after {
+  background: #e9f0f5;
+  content: '';
+  height: 2em;
+  width: 100%;
+  position: absolute;
+}
+
+@media only screen and (max-width: 900px) {
+  .split::before {
+    right: 47.4% !important;
+  }
+
+  .split .cd-timeline-content {
+    width: 70% !important;
+  }
+}
+
+@media only screen and (max-width: 1170px) {
+  .split::before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    right: 48%;
+    width: 50%;
+    background: #d7e4ed;
+  }
+
+  .split .cd-timeline-content {
+    width: 80%;
+    margin-left: 4em;
   }
 }
