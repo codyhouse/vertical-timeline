@@ -501,20 +501,32 @@ Splited timeline
   display: inline-block;
 }
 
+.split .cd-timeline-container:nth-child(even) {
+  float: left;
+}
+
 .split .cd-timeline-block:nth-child(even) .cd-date {
   right: 150%;
 }
 
-.split .cd-timeline-container:nth-child(even) {
-  float: left;
+.total-split-3 .cd-timeline-block:nth-child(even) .cd-date {
+  right: 155%;
 }
 
 .split .cd-date {
   left: 145%;
 }
 
+.total-split-3 .cd-date {
+  left: 156%;
+}
+
 .split .cd-timeline-block {
   z-index: 2;
+}
+
+.total-split-3 .cd-timeline-content {
+  margin-left: 0em !important;
 }
 
 .split .cd-timeline-content {
@@ -525,10 +537,30 @@ Splited timeline
 .split .cd-timeline-container::before {
   z-index: 2;
 }
+
 .split .cd-timeline-container {
   margin-top: 0em;
 }
 
+.inner-split > .cd-timeline-container:first-child::before {
+  height: 3% !important;
+}
+
+.total-split-3 > .cd-timeline-container:nth-child(odd) {
+  width: 66.66%;
+}
+
+.total-split-3 > .cd-timeline-container:nth-child(even) {
+  width: 33.33%;
+}
+
+/*.total-split-3 .cd-timeline-container .total-split-2 .cd-timeline-container {*/
+  /*width: 33.33%;*/
+/*}*/
+
+.total-split-3::before {
+  right: 33.5% !important;
+}
 .split::before {
   content: '';
   position: absolute;
