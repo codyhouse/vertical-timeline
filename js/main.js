@@ -1,26 +1,70 @@
-jQuery(document).ready(function($){
-	var timelineBlocks = $('.cd-timeline-block'),
-		offset = 0.8;
+(function(){
+	function VerticalTimeline( element ) {
+		this.element = element;
+		this.blocks = this.element.getElementsByClassName("js-cd-block");
+		this.images = this.element.getElementsByClassName("js-cd-img");
+		this.contents = this.element.getElementsByClassName("js-cd-content");
+		this.offset = 0.8;
+		this.hideBlocks();
+	};
 
-	//hide timeline blocks which are outside the viewport
-	hideBlocks(timelineBlocks, offset);
+	VerticalTimeline.prototype.hideBlocks = function() {
+		//hide timeline blocks which are outside the viewport
+		if ( !"classList" in document.documentElement ) {
+			return;
+		}
+		var self = this;
+		for( var i = 0; i < this.blocks.length; i++) {
+			(function(i){
+				if( self.blocks[i].getBoundingClientRect().top > window.innerHeight*self.offset ) {
+					self.images[i].classList.add("cd-is-hidden"); 
+					self.contents[i].classList.add("cd-is-hidden"); 
+				}
+			})(i);
+		}
+	};
 
-	//on scolling, show/animate timeline blocks when enter the viewport
-	$(window).on('scroll', function(){
-		(!window.requestAnimationFrame) 
-			? setTimeout(function(){ showBlocks(timelineBlocks, offset); }, 100)
-			: window.requestAnimationFrame(function(){ showBlocks(timelineBlocks, offset); });
-	});
+	VerticalTimeline.prototype.showBlocks = function() {
+		if ( ! "classList" in document.documentElement ) {
+			return;
+		}
+		var self = this;
+		for( var i = 0; i < this.blocks.length; i++) {
+			(function(i){
+				if( self.contents[i].classList.contains("cd-is-hidden") && self.blocks[i].getBoundingClientRect().top <= window.innerHeight*self.offset ) {
+					// add bounce-in animation
+					self.images[i].classList.add("cd-timeline__img--bounce-in");
+					self.contents[i].classList.add("cd-timeline__content--bounce-in");
+					self.images[i].classList.remove("cd-is-hidden");
+					self.contents[i].classList.remove("cd-is-hidden");
+				}
+			})(i);
+		}
+	};
 
-	function hideBlocks(blocks, offset) {
-		blocks.each(function(){
-			( $(this).offset().top > $(window).scrollTop()+$(window).height()*offset ) && $(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+	var verticalTimelines = document.getElementsByClassName("js-cd-timeline"),
+		verticalTimelinesArray = [],
+		scrolling = false;
+	if( verticalTimelines.length > 0 ) {
+		for( var i = 0; i < verticalTimelines.length; i++) {
+			(function(i){
+				verticalTimelinesArray.push(new VerticalTimeline(verticalTimelines[i]));
+			})(i);
+		}
+
+		//show timeline blocks on scrolling
+		window.addEventListener("scroll", function(event) {
+			if( !scrolling ) {
+				scrolling = true;
+				(!window.requestAnimationFrame) ? setTimeout(checkTimelineScroll, 250) : window.requestAnimationFrame(checkTimelineScroll);
+			}
 		});
 	}
 
-	function showBlocks(blocks, offset) {
-		blocks.each(function(){
-			( $(this).offset().top <= $(window).scrollTop()+$(window).height()*offset && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) && $(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+	function checkTimelineScroll() {
+		verticalTimelinesArray.forEach(function(timeline){
+			timeline.showBlocks();
 		});
-	}
-});
+		scrolling = false;
+	};
+})();
