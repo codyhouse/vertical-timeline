@@ -8,6 +8,8 @@ An easy to customize, responsive timeline.
  
 [License](https://codyhouse.co/license)
 
+⚠️ A new version of this Experiment is available in our [Components Library](https://codyhouse.co/ds/components/app/vertical-timeline).
+
 ## Dependencies
 
 This experiment is built upon the [CodyHouse Framework](https://github.com/CodyHouse/codyhouse-framework).
